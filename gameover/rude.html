@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>게임 오버 - 무례한 태도</title>
+  <style>
+    body {
+      background-color: #2b0000;
+      color: #ffe6e6;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 { font-size: 36px; }
+    p { font-size: 18px; opacity: 0.9; }
+    .btn {
+      margin-top: 40px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background-color: #aa0000;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>😠 공주의 분노</h1>
+<p>당신의 무례한 말에 공주는 상처받았습니다.<br>이제 더 이상 기회는 없습니다.</p>
+
+<button class="btn" onclick="restart()">처음부터</button>
+
+<script>
+  function restart() {
+    localStorage.setItem("score", "0");
+    location.href = "../index.html";
+  }
+</script>
+
+</body>
+</html>
