@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>도입 영상</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #c2eaf6;
+      background-image: url('assets/images/intro-bg.png'); /* 선택 배경 이미지 */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      backdrop-filter: brightness(0.95);
+    }
+
+    .video-box {
+      width: 80%;
+      max-width: 640px;
+      margin-bottom: 40px;
+      border: 5px solid #555;
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-back {
+      background-color: #888;
+      color: white;
+    }
+
+    .btn-skip {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .btn:hover {
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="video-box">
+    <video controls autoplay onended="location.href='stage1-1.html'">
+      <source src="assets/videos/intro.mp4" type="video/mp4">
+      사용 중인 브라우저에서는 동영상 재생을 지원하지 않습니다.
+    </video>
+  </div>
+
+  <div class="button-container">
+    <button class="btn btn-back" onclick="location.href='index.html'">뒤로가기</button>
+    <button class="btn btn-skip" onclick="location.href='stage1-1.html'">건너뛰기</button>
+  </div>
+</div>
+</body>
+</html>
