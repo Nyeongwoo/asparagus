@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>스테이지 1-1</title>
+    <script src="scripts/choice.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>스테이지 1 / 질문 1</h1>
+<p>👀 저 멀리서 누군가 다가옵니다. 어떻게 할까요?</p>
+
+<!-- 정상 선택 -->
+<button class="btn" onclick="addScoreAndNavigate(10, 'stage1-2.html')">다가간다</button>
+
+<!-- 점수 0 → 소극적 오버 엔딩 -->
+<button class="btn" onclick="addScoreAndNavigate(0, 'stage1-2.html', 'gameover/timid.html')">지나친다</button>
+
+</body>
+</html>

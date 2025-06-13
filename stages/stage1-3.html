@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>스테이지 1-3</title>
+    <script>
+        function addScore(score) {
+            let current = parseInt(localStorage.getItem("score")) || 0;
+            localStorage.setItem("score", current + score);
+        }
+
+        function choose(score) {
+            addScore(score);
+            location.href = "ending.html";
+        }
+    </script>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f8ff; text-align: center; padding: 50px; }
+        .btn { padding: 10px 20px; margin: 10px; font-size: 16px; border-radius: 10px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<h1>스테이지 1 / 질문 3</h1>
+<p>💬 공주가 이야기를 시작합니다. 어떻게 반응할까요?</p>
+
+<button class="btn" onclick="choose(5)">경청한다</button>
+<button class="btn" onclick="choose(0)">딴청 피운다</button>
+
+</body>
+</html>

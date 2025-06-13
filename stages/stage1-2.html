@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>스테이지 1-2</title>
+  <script src="scripts/game.js"></script>
+  <style> body {
+    font-family: sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 50px;
+  }
+  .btn {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }/* 동일한 스타일 */
+  </style>
+</head>
+<body>
+
+<h1>스테이지 1 / 질문 2</h1>
+<p>🎁 공주가 이상한 채소를 줍니다. 어떻게 할까요?</p>
+
+<button class="btn" onclick="choose(5)">감사히 받는다 (+5)</button>
+<button class="btn" onclick="choose(0)">거절한다 (+0)</button>
+
+<script>
+  function choose(score) {
+    addScore(score);
+    location.href = "stage1-3.html";
+  }
+</script>
+
+</body>
+</html>
