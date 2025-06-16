@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>스테이지 4-1 분기 중...</title>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const totalScore = parseInt(sessionStorage.getItem('score') || '0');
+
+      if (totalScore >= 120) {
+        // 고득점 루트
+        location.href = 'A-1.html';
+      } else if (totalScore <= 90) {
+        // 저득점 게임 오버
+        location.href = 'B-1.html';
+      } else {
+        // 중간 점수 루트
+        location.href = 'C-1.html';
+      }
+    });
+  </script>
+</head>
+<body>
+<p>점수에 따라 다음 스테이지로 이동 중입니다...</p>
+</body>
+</html>

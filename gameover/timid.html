@@ -2,25 +2,39 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>게임 오버 - 소극적 선택</title>
+  <title>게임 오버</title>
   <style>
     body {
-      background-color: #1e1e2f;
-      color: #ffffff;
-      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f9;
+      background-image: url('../assets/images/jail.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 50px;
     }
+
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
+      color: white;
     }
+
     p {
       font-size: 20px;
-      opacity: 0.8;
+      opacity: 0.9;
+      color: white;
+      margin-bottom: 30px;
     }
+
     .btn {
-      margin-top: 40px;
+      margin-top: 20px;
       padding: 12px 24px;
       font-size: 16px;
       border: none;
@@ -28,19 +42,39 @@
       background-color: #f44336;
       color: white;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #d32f2f;
+    }
+
+    .title-box {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .title-image {
+      width: 70%;
+      max-width: 400px;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
-<h1>💀 게임 오버</h1>
-<p>당신은 너무 소극적이었습니다.<br>공주는 등을 돌리고 떠났습니다...</p>
+<div class="title-box">
+  <img src="../assets/images/gameover_white.svg" alt="아스파라거스 공주" class="title-image">
+</div>
+
+<p>문을 열어 달라고 외치는 사이,그 소리를 듣고 깨어난 적군에 의해 <br> 당신은 외마디 비명도 지르지 못하고 사망했습니다.</p>
 
 <button class="btn" onclick="restart()">처음부터 다시</button>
 
+
+
 <script>
   function restart() {
-    localStorage.setItem("score", "0");
     location.href = "../index.html";
   }
 </script>

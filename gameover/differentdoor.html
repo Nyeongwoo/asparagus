@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게임 오버 - 소극적 선택</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f9;
+            background-image: url('../assets/images/jail.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        p {
+            font-size: 20px;
+            opacity: 0.9;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #d32f2f;
+        }
+
+        .title-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .title-image {
+            width: 70%;
+            max-width: 400px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="title-box">
+    <img src="../assets/images/gameover_white.svg" alt="아스파라거스 공주" class="title-image">
+</div>
+
+<p>열린 문에는 몰래 숨죽이고 있던 패잔병들이 숨어있었고,<br> 그들의 복수의 칼날을 용사는 당해내기 못했습니다.</p>
+
+<button class="btn" onclick="restart()">처음부터 다시</button>
+
+
+
+<script>
+    function restart() {
+        location.href = "../index.html";
+    }
+</script>
+
+</body>
+</html>

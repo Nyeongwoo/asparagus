@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>스테이지 1-1</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f9;
+      background-image: url('../assets/images/background.gif');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      backdrop-filter: brightness(0.95);
+    }
+
+    .image-box {
+      width: 400px;
+      height: 400px;
+      margin-bottom: 40px;
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: #97c3aa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dialogue-box {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .dialogue-box::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 30px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 20px solid #ffffff;
+    }
+
+    .dialogue-box .name {
+      font-weight: bold;
+      color: #34785c;
+      margin-bottom: 8px;
+    }
+
+    .dialogue-box .text {
+      color: #333;
+      font-size: 16px;
+    }
+
+    .button-group {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-group::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 30px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 20px solid #ffffff;
+    }
+
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .choice-btn {
+      width: 100%;
+      background-color: #d6ebff;
+      color: #003366;
+      border: none;
+      border-radius: 12px;
+      padding: 18px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: none;
+      transition: background-color 0.3s;
+    }
+
+    .choice-btn:hover {
+      background-color: #bcdfff;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+      white-space: nowrap;
+      z-index: 10;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="image-box">
+    <img src="../assets/images/Ap_talk.gif" alt="질문 이미지" />
+  </div>
+
+  <div class="dialogue-box">
+    <div class="name">아스파라거스 공주</div>
+    <div class="text">어때요? 일부러 우는척을 해서 데려다 달라고 한거예요.</div>
+  </div>
+
+  <div class="button-group">
+    <div class="tooltip-container">
+      <button class="choice-btn" onclick="addScoreAndNavigate(5, '4-14.html')">
+        오 대단한데요~
+      </button>
+    </div>
+
+    <div class="tooltip-container">
+      <button class="choice-btn" onclick="addScoreAndNavigate(1, '4-14.html')">
+        머리는 좋네요.
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="../scripts/choice.js"></script>
+</body>
+</html>

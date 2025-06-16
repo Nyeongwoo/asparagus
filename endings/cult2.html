@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>해피 엔딩</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fceee3;
+            background-image: url('../assets/images/forest.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            backdrop-filter: brightness(0.95);
+        }
+
+        .image-box {
+            width: 400px;
+            height: 400px;
+            margin-bottom: 40px;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #97c3aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="image-box">
+        <img src="../assets/images/Ap_sunglass.gif" alt="행복한 결말 이미지" />
+    </div>
+    <h1>컬트 엔딩</h1>
+    <p>아스파라거스 공주는 그 말에 감동받았습니다. <br> 공주는 두릅 공주를 처리했고, 그 바람에
+        수배자가 된 용사와 아스파라거스는 떠돌이 생활을 하게 되었습니다.</p>
+    <button class="btn" onclick="location.href='../index.html'">처음으로 돌아가기</button>
+</div>
+</body>
+</html>

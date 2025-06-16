@@ -17,7 +17,7 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background: url('assets/images/background.png') no-repeat center center;
+      background: url('assets/images/background.gif') no-repeat center center;
       background-size: cover;
       text-align: center;
     }
@@ -64,18 +64,48 @@
       width: 24px;
       height: 24px;
     }
+    .title-box {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .title-image {
+      width: 70%;
+      height: 20vh;
+    }
+
+
   </style>
+  <script>
+    function toggleSound() {
+      const bgm = document.getElementById("bgm");
+      const icon = document.getElementById("soundToggle");
+
+      if (bgm.muted) {
+        bgm.muted = false;
+        icon.src = "assets/icons/sound-on.png";
+        icon.alt = "음악 켜짐";
+      } else {
+        bgm.muted = true;
+        icon.src = "assets/icons/sound-off.png";
+        icon.alt = "음악 꺼짐";
+      }
+    }
+</script>
 </head>
 <body>
-
+<audio id="bgm" src="assets/audio/bgm.mp3" autoplay loop></audio>
 <div class="container">
-  <h1>아스파라거스 공주</h1>
+  <div class="title-box">
+    <img src="assets/images/title.svg" alt="아스파라거스 공주" class="title-image">
+  </div>
   <div class="buttons">
     <button class="start-btn" onclick="location.href='intro.html'">시작하기</button>
-    <button class="icon-btn" title="음향">
-      <img src="assets/icons/music.png" alt="음향">
+    <button class="icon-btn" title="음향" onclick="toggleSound()">
+      <img id="soundToggle" src="assets/icons/sound-on.png" alt="음악 켜짐">
     </button>
-    <button class="icon-btn" title="설정">
+    </button>
+    <button class="icon-btn" title="설정" onclick="location.href='settings.html'">
       <img src="assets/icons/settings.png" alt="설정">
     </button>
   </div>

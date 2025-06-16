@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>도입 영상</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #c2eaf6;
+            background-image: url('../assets/images/tbh.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            backdrop-filter: brightness(0.95);
+        }
+
+        .image-box {
+            width: 400px;
+            height: 400px;
+            margin-bottom: 40px;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #97c3aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-back {
+            background-color: #888;
+            color: white;
+        }
+
+        .btn-skip {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn:hover {
+            filter: brightness(1.1);
+        }
+
+        p {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="image-box">
+        <p style="font-size: 20px; padding: 20px;">
+            거북소년은 공주에게로 용사를 안내합니다.
+        </p>
+    </div>
+
+    <div class="button-container">
+        <button class="btn btn-skip" onclick="location.href='../stages/4-5.html'">계속하기</button>
+    </div>
+</div>
+</body>
+</html>

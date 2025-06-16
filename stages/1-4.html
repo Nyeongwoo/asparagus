@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>스테이지 1-3</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f9;
+      background-image: url('../assets/images/castle.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      backdrop-filter: brightness(0.95);
+    }
+
+    .image-box {
+      width: 400px;
+      height: 400px;
+      margin-bottom: 40px;
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: #97c3aa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dialogue-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .dialogue-box::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 30px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 20px solid #ffffff;
+    }
+
+    .dialogue-box .name {
+      font-weight: bold;
+      color: #34785c;
+      margin-bottom: 8px;
+    }
+
+    .dialogue-box .text {
+      color: #333;
+      font-size: 16px;
+    }
+
+    .button-group {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-group::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 30px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 20px solid #ffffff;
+    }
+
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .choice-btn {
+      width: 100%;
+      background-color: #d6ebff;
+      color: #003366;
+      border: none;
+      border-radius: 20px;
+      padding: 18px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: none;
+      transition: background-color 0.3s;
+    }
+
+    .choice-btn:hover {
+      background-color: #bcdfff;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+      white-space: nowrap;
+      z-index: 10;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @keyframes red-flash {
+      0%, 20%, 40%, 60%, 80%, 100% {
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      10%, 30%, 50%, 70%, 90% {
+        border-color: rgba(206, 56, 86, 0.8);
+      }
+    }
+
+    .red-flash {
+      animation: red-flash 5s ease-in-out 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="image-box">
+    <img src="../assets/images/Ap_sunglass.gif" alt="공주가 연주하는 모습" />
+  </div>
+
+  <div class="dialogue-box">
+    <div class="name">아스파라거스 공주</div>
+    <div class="text">
+      아 오랜만에 밖에 나오니까 햇빛에 탈까봐요.
+    </div>
+  </div>
+
+  <div class="button-group">
+    <div class="tooltip-container">
+      <button class="choice-btn" onclick="addScoreAndNavigate(10, '../stages/1-5.html')">
+        잘 어울리네요!
+      </button>
+      <span class="tooltip-text">공주가 기뻐합니다..</span>
+    </div>
+
+    <div class="tooltip-container">
+      <button class="choice-btn" onclick="addScoreAndNavigate(4, '../stages/1-5.html')">
+        아하 그렇군요, 잘 쓰고 계세요.
+      </button>
+      <span class="tooltip-text">공주가 약간 기뻐합니다.</span>
+    </div>
+
+    <div class="tooltip-container">
+      <button class="choice-btn" onclick="addScoreAndNavigate(0, '../stages/1-5.html', '../gameover/villan-sunglass.html')">
+        굳이..? 그냥 두고 오세요.
+      </button>
+      <span class="tooltip-text">공주가 상처받을지도 모릅니다.</span>
+    </div>
+  </div>
+</div>
+
+<script src="../scripts/choice.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const lastScore = parseInt(sessionStorage.getItem('lastScore') || '0');
+    if (lastScore <= 5) {
+      const imageBox = document.querySelector('.image-box');
+      if (imageBox) {
+        imageBox.classList.add('red-flash');
+      }
+    }
+  });
+</script>
+</body>
+</html>
